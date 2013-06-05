@@ -9,10 +9,10 @@
             <trans-unit id="2">
                 <source>bodypage.transapp</source>
                 <target><![CDATA[
-	                <p>TransApp est une application à base du micro framework Silex à pour but de faciliter l'intégration des sites web sous Symfony 2.</p>
-					<p>Les développeurs Front peuvent intégrer les templates PSD directement en TWIG sans la nécessité d'utiliser le framework Symfony 2.</p>
-					<p>TransApp peuvent etre utiliser également pour les sites web statiques qui nécessite le multilangues.</p>
-				]]></target>
+                    <p>TransApp est une application à base du micro framework Silex à pour but de faciliter l'intégration des sites web sous Symfony 2.</p>
+                    <p>Les développeurs Front peuvent intégrer les templates PSD directement en TWIG sans la nécessité d'utiliser le framework Symfony 2.</p>
+                    <p>TransApp peuvent etre utiliser également pour les sites web statiques qui nécessite le multilangues.</p>
+                ]]></target>
             </trans-unit>
         </body>
     </file>
