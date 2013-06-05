@@ -1,0 +1,3 @@
+/cache/views/*
+/vendor
+/composer.lock

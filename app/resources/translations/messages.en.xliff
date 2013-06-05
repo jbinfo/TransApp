@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>titlepage.transapp</source>
+                <target>TransApp Application</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>bodypage.transapp</source>
+                <target><![CDATA[
+                    <p>TransApp is an application based on the Silex micro framework designed to facilitate the integration of websites in Symfony 2.</p>
+                    <p>Front developers can integrate directly PSD templates in Twig format without the need to use the Symfony 2 framework.</p>
+                    <p>TransApp can also be used for static websites that requires multilingual</p>
+                ]]></target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

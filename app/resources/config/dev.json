@@ -1,0 +1,22 @@
+{
+    "config": {
+        "twig": {
+            "vars": {
+                "app_name": "TransApp"
+            }
+        },
+        "routing": {
+            "locales": ["en", "fr"],
+            "default_locale": "en",
+            "routes": {
+                "transapp_homepage": {
+                    "paths": {
+                        "transapp_homepage_base": "/", 
+                        "transapp_homepage_index": "/index.html"
+                    }, 
+                    "template": "main/index.html.twig"
+                }
+            }
+        }
+    }
+}

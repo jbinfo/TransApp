@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>titlepage.transapp</source>
+                <target>Application TransApp</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>bodypage.transapp</source>
+                <target><![CDATA[
+	                <p>TransApp est une application à base du micro framework Silex à pour but de faciliter l'intégration des sites web sous Symfony 2.</p>
+					<p>Les développeurs Front peuvent intégrer les templates PSD directement en TWIG sans la nécessité d'utiliser le framework Symfony 2.</p>
+					<p>TransApp peuvent etre utiliser également pour les sites web statiques qui nécessite le multilangues.</p>
+				]]></target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
