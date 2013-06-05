@@ -1,8 +1,8 @@
 <?php
 
 /**
- * This file is part of TransApp. 
- * 
+ * This file is part of TransApp.
+ *
  * (c) Lhassan Baazzi <baazzilhassan@gmail.com>
  */
 
@@ -21,9 +21,9 @@ class LoadConfigurationListener implements EventSubscriberInterface
 
     /**
      * __construct()
-     * 
-     * @param   Application $app
-     * @return  void
+     *
+     * @param  Application $app
+     * @return void
      */
     public function __construct(Application $app)
     {
@@ -32,7 +32,7 @@ class LoadConfigurationListener implements EventSubscriberInterface
 
     /**
      * loadConfiguration()
-     * 
+     *
      * @param  GetResponseEvent $event
      * @return void
      */
@@ -47,7 +47,7 @@ class LoadConfigurationListener implements EventSubscriberInterface
 
     /**
      * getSubscribedEvents()
-     * 
+     *
      * @return array
      */
     public static function getSubscribedEvents()

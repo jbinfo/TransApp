@@ -1,8 +1,8 @@
 <?php
 
 /**
- * This file is part of TransApp. 
- * 
+ * This file is part of TransApp.
+ *
  * (c) Lhassan Baazzi <baazzilhassan@gmail.com>
  */
 
@@ -36,12 +36,12 @@ class UrlGenerator extends BaseUrlGenerator
         $this->logger = $logger;
     }
 
-	/**
+    /**
      * {@inheritDoc}
      */
     public function generate($name, $parameters = array(), $referenceType = self::ABSOLUTE_PATH)
     {
-    	if ($this->app['default_locale'] !== $this->app['request']->getLocale()) {
+        if ($this->app['default_locale'] !== $this->app['request']->getLocale()) {
             $name = LoadRoutesListener::ROUTING_PREFIX . $name;
         }
 

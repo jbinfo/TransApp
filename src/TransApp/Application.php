@@ -1,8 +1,8 @@
 <?php
 
 /**
- * This file is part of TransApp. 
- * 
+ * This file is part of TransApp.
+ *
  * (c) Lhassan Baazzi <baazzilhassan@gmail.com>
  */
 
@@ -23,11 +23,11 @@ class Application extends BaseApplication
     /**
      * __construct()
      *
-     * @param string $environment
+     * @param  string $environment
      * @return void
      */
     public function __construct(Request $request, $environment)
-    {       
+    {
         // set the handler exception, convert an exception to a response
         set_exception_handler(array($this, 'handleException'));
 
@@ -47,7 +47,7 @@ class Application extends BaseApplication
 
     /**
      * getRootDir()
-     * 
+     *
      * @return string path to the root dir
      */
     public function getRootDir()
@@ -57,7 +57,7 @@ class Application extends BaseApplication
 
     /**
      * getTwigViewsDir()
-     * 
+     *
      * @return string path to twig views dir
      */
     public function getTwigViewsDir()
@@ -67,7 +67,7 @@ class Application extends BaseApplication
 
     /**
      * getTwigViewsDirCache()
-     * 
+     *
      * @return string path to twig views dir cache
      */
     public function getTwigViewsDirCache()
@@ -77,7 +77,7 @@ class Application extends BaseApplication
 
     /**
      * getTwigViewsDir()
-     * 
+     *
      * @return string path to the translations catalogue dir
      */
     public function getTranslationsDir()
@@ -87,7 +87,7 @@ class Application extends BaseApplication
 
     /**
      * getTranslationsDirCache()
-     * 
+     *
      * @return string path to the translations catalogue dir cache
      */
     public function getTranslationsDirCache()
@@ -117,13 +117,13 @@ class Application extends BaseApplication
 
     /**
      * handleException()
-     * 
-     * @param   Exception $e
-     * @return  void
+     *
+     * @param  Exception $e
+     * @return void
      */
     public function handleException(\Exception $e)
     {
-        
+
         $event = new GetResponseForExceptionEvent(
             $this['kernel'],
             $this['request'],
@@ -156,7 +156,7 @@ class Application extends BaseApplication
 
     /**
      * registerServicesProviders()
-     * 
+     *
      * @return void
      */
     protected function registerServicesProviders()
@@ -178,10 +178,10 @@ class Application extends BaseApplication
 
     /**
      * configureServicesProviders()
-     * 
+     *
      * @return void
      */
-    protected function configureServicesProviders() 
+    protected function configureServicesProviders()
     {
         $app = $this;
 
@@ -219,18 +219,18 @@ class Application extends BaseApplication
                 if (count($fileBasenameExploded) < 3) {
                     throw new \RuntimeException(
                         sprintf(
-                            'The file "%s" is not correctly rename, must be "domain.locale.format" (e.g. messages.en.xliff)', 
+                            'The file "%s" is not correctly rename, must be "domain.locale.format" (e.g. messages.en.xliff)',
                             $file->getFileName()
                         )
                     );
                 }
 
                 $translator->addResource(
-                    $fileBasenameExploded[2], $file, 
+                    $fileBasenameExploded[2], $file,
                     $fileBasenameExploded[1], $fileBasenameExploded[0]
                 );
             }
-                
+
             return $translator;
         }));
     }

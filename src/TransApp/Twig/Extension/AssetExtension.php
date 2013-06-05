@@ -1,8 +1,8 @@
 <?php
 
 /**
- * This file is part of TransApp. 
- * 
+ * This file is part of TransApp.
+ *
  * (c) Lhassan Baazzi <baazzilhassan@gmail.com>
  */
 
@@ -10,15 +10,15 @@ namespace TransApp\Twig\Extension;
 
 use TransApp\Application;
 
-class AssetExtension extends \Twig_Extension 
+class AssetExtension extends \Twig_Extension
 {
 
     private $app;
 
     /**
      * __construct()
-     * 
-     * @param Application $app
+     *
+     * @param  Application $app
      * @return void
      */
     public function __construct(Application $app)
@@ -28,7 +28,7 @@ class AssetExtension extends \Twig_Extension
 
     /**
      * getFunctions()
-     * 
+     *
      * @return void
      */
     public function getFunctions()
@@ -40,11 +40,11 @@ class AssetExtension extends \Twig_Extension
 
     /**
      * asset()
-     * 
-     * @param string $url
+     *
+     * @param  string $url
      * @return string
      */
-    public function asset($url) 
+    public function asset($url)
     {
         return sprintf('%s/%s', $this->app['request']->getBasePath(), ltrim($url, '/'));
     }

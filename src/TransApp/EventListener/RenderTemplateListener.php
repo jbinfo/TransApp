@@ -1,8 +1,8 @@
 <?php
 
 /**
- * This file is part of TransApp. 
- * 
+ * This file is part of TransApp.
+ *
  * (c) Lhassan Baazzi <baazzilhassan@gmail.com>
  */
 
@@ -22,9 +22,9 @@ class RenderTemplateListener implements EventSubscriberInterface
 
     /**
      * __construct()
-     * 
-     * @param   Application $app
-     * @return  void
+     *
+     * @param  Application $app
+     * @return void
      */
     public function __construct(Application $app)
     {
@@ -33,8 +33,8 @@ class RenderTemplateListener implements EventSubscriberInterface
 
     /**
      * renderTemplate()
-     * 
-     * @param  GetResponseEvent $event 
+     *
+     * @param  GetResponseEvent $event
      * @return void
      */
     public function renderTemplate(GetResponseEvent $event)
@@ -53,7 +53,7 @@ class RenderTemplateListener implements EventSubscriberInterface
 
     /**
      * getSubscribedEvents()
-     * 
+     *
      * @return array
      */
     public static function getSubscribedEvents()
@@ -65,15 +65,15 @@ class RenderTemplateListener implements EventSubscriberInterface
 
     /**
      * setRouteNameInRequest()
-     * 
-     * @param   Request $request
-     * @return  void
+     *
+     * @param  Request $request
+     * @return void
      */
     protected function setRouteNameInRequest(Request $request)
     {
         if (false !== strpos($request->get('_route'), LoadRoutesListener::ROUTING_PREFIX)) {
             $request->attributes->set(
-                '_route', 
+                '_route',
                 substr($request->get('_route'), strlen(LoadRoutesListener::ROUTING_PREFIX))
             );
         }

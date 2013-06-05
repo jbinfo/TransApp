@@ -1,8 +1,8 @@
 <?php
 
 /**
- * This file is part of TransApp. 
- * 
+ * This file is part of TransApp.
+ *
  * (c) Lhassan Baazzi <baazzilhassan@gmail.com>
  */
 
@@ -24,9 +24,9 @@ class LoadRoutesListener implements EventSubscriberInterface
 
     /**
      * __construct()
-     * 
-     * @param   Application $app
-     * @return  void
+     *
+     * @param  Application $app
+     * @return void
      */
     public function __construct(Application $app)
     {
@@ -35,7 +35,7 @@ class LoadRoutesListener implements EventSubscriberInterface
 
     /**
      * loadRoutes()
-     * 
+     *
      * @param  GetResponseEvent $event
      * @return void
      */
@@ -45,7 +45,7 @@ class LoadRoutesListener implements EventSubscriberInterface
             $config = $this->app['config'];
             $routing = $config['routing'];
 
-            if (!empty($routing['default_locale'])) 
+            if (!empty($routing['default_locale']))
                 $this->app['locale'] = $routing['default_locale'];
 
             $this->app['default_locale'] = $this->app['locale'];
@@ -59,12 +59,10 @@ class LoadRoutesListener implements EventSubscriberInterface
                 $this->app['locales'] = $routing['locales'];
             }
 
-
             $requirements = array('_method' => 'GET|POST');
             if (!empty($this->app['locales'])) {
                 $requirements = array_merge($requirements, array('_locale' => implode('|', $this->app['locales'])));
             }
-
 
             if (!empty($routing['routes'])) {
 
@@ -84,7 +82,7 @@ class LoadRoutesListener implements EventSubscriberInterface
                     }
 
                     $defaultsBase = array(
-                        '_template' => $itemRoute['template'], 
+                        '_template' => $itemRoute['template'],
                         '_locale' => $this->app['default_locale']
                     );
 
@@ -92,15 +90,15 @@ class LoadRoutesListener implements EventSubscriberInterface
                         '_template' => $itemRoute['template']
                     );
 
-                    foreach($itemRoute['paths'] as $pathName => $path) {
+                    foreach ($itemRoute['paths'] as $pathName => $path) {
 
                         $this->app['routes']->add(
-                            $pathName, 
+                            $pathName,
                             new Route(('/' === $path ? '/{_locale}' : $path), $defaultsBase, $requirements)
                         );
 
                         $routesByLocales->add(
-                            sprintf('%s%s', static::ROUTING_PREFIX, $pathName), 
+                            sprintf('%s%s', static::ROUTING_PREFIX, $pathName),
                             new Route($path, $defaults, $requirements)
                         );
                     }
@@ -119,7 +117,7 @@ class LoadRoutesListener implements EventSubscriberInterface
 
     /**
      * getSubscribedEvents()
-     * 
+     *
      * @return array
      */
     public static function getSubscribedEvents()

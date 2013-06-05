@@ -1,8 +1,8 @@
 <?php
 
 /**
- * This file is part of TransApp. 
- * 
+ * This file is part of TransApp.
+ *
  * (c) Lhassan Baazzi <baazzilhassan@gmail.com>
  */
 
@@ -11,7 +11,6 @@ namespace TransApp\Provider;
 use Silex\ServiceProviderInterface;
 use Silex\Application;
 use TransApp\Routing\Generator\UrlGenerator;
-
 
 class UrlGeneratorServiceProvider implements ServiceProviderInterface
 {

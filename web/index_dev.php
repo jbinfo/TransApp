@@ -5,7 +5,7 @@
 if (isset($_SERVER['HTTP_CLIENT_IP'])
     || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
     || !in_array(@$_SERVER['REMOTE_ADDR'], array(
-        '127.0.0.1', 
+        '127.0.0.1',
         '::1',
     ))
 ) {
@@ -17,17 +17,13 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-
 require_once __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Debug\ErrorHandler;
 use TransApp\Application;
-
 
 // instantiate the Application
 $app = new Application($request = Request::createFromGlobals(), 'dev');
-
 
 // run the Application and return a response
 $app->run($request);
