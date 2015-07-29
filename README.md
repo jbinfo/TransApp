@@ -60,3 +60,7 @@ Under the `vars` key you can put all the variables you want in TWIG tamplates an
 
 
 This documentation is in progress ....
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/jbinfo/transapp/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
